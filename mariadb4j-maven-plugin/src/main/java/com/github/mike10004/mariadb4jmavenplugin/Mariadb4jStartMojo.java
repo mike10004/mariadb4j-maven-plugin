@@ -44,6 +44,9 @@ public class Mariadb4jStartMojo extends AbstractMojo {
     private transient MavenProject project;
 
     @Parameter
+    private boolean skip;
+
+    @Parameter
     private String[] args;
 
     @Parameter
@@ -86,6 +89,10 @@ public class Mariadb4jStartMojo extends AbstractMojo {
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         getLog().debug("executing MariaDB4J start mojo");
+        if (skip) {
+            getLog().debug("skipping start mariadb");
+            return;
+        }
         Map pluginContext = getPluginContext();
         DB db = null;
         boolean clean = false;
@@ -309,5 +316,13 @@ public class Mariadb4jStartMojo extends AbstractMojo {
 
     public void setTempDir(File tempDir) {
         this.tempDir = tempDir;
+    }
+
+    public boolean isSkip() {
+        return skip;
+    }
+
+    public void setSkip(boolean skip) {
+        this.skip = skip;
     }
 }

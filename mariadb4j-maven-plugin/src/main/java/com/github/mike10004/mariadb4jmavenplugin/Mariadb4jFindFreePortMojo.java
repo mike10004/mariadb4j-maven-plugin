@@ -26,8 +26,15 @@ public class Mariadb4jFindFreePortMojo extends AbstractMojo {
     )
     private transient MavenProject project;
 
+    @Parameter
+    private boolean skip;
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        if (skip) {
+            getLog().debug("skipping finding free port");
+            return;
+        }
         int port;
         try {
             port = findFreePort();
@@ -52,5 +59,13 @@ public class Mariadb4jFindFreePortMojo extends AbstractMojo {
 
     public void setProject(MavenProject project) {
         this.project = project;
+    }
+
+    public boolean isSkip() {
+        return skip;
+    }
+
+    public void setSkip(boolean skip) {
+        this.skip = skip;
     }
 }
