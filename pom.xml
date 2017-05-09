@@ -8,7 +8,7 @@
     <artifactId>mariadb4j-maven-plugin-parent</artifactId>
     <packaging>pom</packaging>
     <name>mariadb4j-maven-plugin-parent</name>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <modules>
         <module>mariadb4j-maven-plugin</module>
         <module>tests/mariadb4j-maven-plugin-test-basic</module>
