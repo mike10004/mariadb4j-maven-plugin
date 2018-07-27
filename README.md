@@ -1,4 +1,7 @@
 # mariadb4j-maven-plugin
+
+**THIS PROJECT IS ABANDONED, PLEASE USE & CONTRIBUTE TO THE mariadb4j-maven-plugin WHICH IS NOW PART OF MariaDB4j (see [MariaDB4j/pull/135](https://github.com/vorburger/MariaDB4j/pull/135)).**
+
 Maven plugin that starts and stops a MariaDB instance for the integration test phase.
 
 This is a Maven plugin wrapper around https://github.com/vorburger/MariaDB4j, a 
